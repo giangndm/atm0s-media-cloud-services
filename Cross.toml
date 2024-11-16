@@ -4,3 +4,10 @@ pre-build = [
     "dpkg --add-architecture $CROSS_DEB_ARCH",
     "apt-get update && apt-get --assume-yes install libssl-dev:$CROSS_DEB_ARCH curl",
 ]
+
+[build.env]
+passthrough = [
+    "RUST_BACKTRACE",
+    "RUST_LOG",
+    "SKIP_FRONTEND_BUILD",
+]
