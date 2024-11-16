@@ -5,7 +5,7 @@ fn main() {
     if !cfg!(debug_assertions) {
         Command::new("pnpm")
             .current_dir("./view/")
-            .args(&["run", "build"])
+            .args(["run", "build"])
             .stdout(std::process::Stdio::inherit())
             .stderr(std::process::Stdio::inherit())
             .status()
