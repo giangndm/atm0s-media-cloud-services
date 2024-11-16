@@ -12,17 +12,9 @@ targets = [
     { triple = "x86_64-unknown-linux-gnu" },
     { triple = "x86_64-unknown-linux-musl" },
     { triple = "aarch64-unknown-linux-gnu" },
-    { triple = "arm-unknown-linux-gnueabihf" },
-    { triple = "armv7-unknown-linux-gnueabihf" },
-    { triple = "mips-unknown-linux-gnu" },
-    { triple = "mips64-unknown-linux-gnuabi64" },
-    { triple = "mips64el-unknown-linux-gnuabi64" },
-    { triple = "mipsel-unknown-linux-gnu" },
     { triple = "aarch64-unknown-linux-musl" },
     { triple = "x86_64-apple-darwin" },
     { triple = "aarch64-apple-darwin" },
-    { triple = "x86_64-pc-windows-gnu" },
-    { triple = "x86_64-pc-windows-msvc" }
 ]
 
 [advisories]
@@ -67,5 +59,6 @@ allow = [
   "Zlib",                                   # https://tldrlegal.com/license/zlib-libpng-license-(zlib)
   "LGPL-2.0",                               # https://www.gnu.org/licenses/old-licenses/lgpl-2.0.en.html
   "X11",                                    # https://en.wikipedia.org/wiki/MIT_License
-  "X11-distribute-modifications-variant"    # https://spdx.org/licenses/X11-distribute-modifications-variant.html
+  "X11-distribute-modifications-variant",   # https://spdx.org/licenses/X11-distribute-modifications-variant.html
+  "Unicode-3.0",                            # https://spdx.org/licenses/Unicode-3.0.html
 ]
