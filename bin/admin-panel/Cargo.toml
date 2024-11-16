@@ -1,11 +1,12 @@
 [package]
-name = "admin-panel"
+name = "atm0s-cloud-admin-panel"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-http-common = { path = "../../packages/http-common" }
-atm0s-media-cloud-utils = { path = "../../packages/utils" }
+http-common = { workspace = true }
+utils = { workspace = true }
+
 tokio = { workspace = true, features = ["full"] }
 clap = { workspace = true, features = ["derive", "env"] }
 log = { workspace = true }

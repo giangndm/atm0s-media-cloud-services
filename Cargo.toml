@@ -7,6 +7,9 @@ members = [
 ]
 
 [workspace.dependencies]
+http-common = { path = "packages/http-common", package = "atm0s-cloud-http-common" }
+utils = { path = "packages/utils", package = "atm0s-cloud-utils" }
+
 tokio = "1"
 clap = "4.4"
 log = "0.4"
