@@ -5,7 +5,7 @@ fn main() {
     if !cfg!(debug_assertions) && std::env::var("SKIP_FRONTEND_BUILD").is_err() {
         Command::new("pnpm")
             .current_dir("./view/")
-            .args(&["install"])
+            .args(["install"])
             .stdout(std::process::Stdio::inherit())
             .stderr(std::process::Stdio::inherit())
             .status()
