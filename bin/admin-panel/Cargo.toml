@@ -27,7 +27,3 @@ reqwest = { workspace = true, features = ["json"] }
 clerk-rs = { workspace = true }
 bcrypt = { workspace = true }
 oauth2 = { workspace = true }
-
-[[bin]]
-name = "server"
-path = "bin/server.rs"
