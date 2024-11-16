@@ -1,3 +1,5 @@
+//! This is copy from Poem-proxy, but I've updated with the latest version of Poem.
+//!
 //! Poem-proxy is a simple and easy-to-use proxy [Endpoint](poem::Endpoint) compatible with the
 //! [Poem Web Framework](poem). It supports the forwarding of http get and post requests
 //! as well as websockets right out of the box!
@@ -12,11 +14,10 @@
 //!
 //! ```
 //! use poem::{get, handler, listener::TcpListener, web::Path, IntoResponse, Route, Server, EndpointExt};
-//! use poem_proxy::{proxy, ProxyConfig};
+//! use atm0s_cloud_http_common::dev_proxy::{proxy, ProxyConfig};
 //!
 //! let pconfig = ProxyConfig::new( "localhost:5173" )
 //!     .web_insecure()   // Enables proxy-ing web requests, sets the proxy to use http instead of https
-//!     .ws_insecure()    // Enables proxy-ing web sockets, sets the proxy to use ws instead of wss
 //!     .enable_nesting() // Sets the proxy to support nested routes
 //!     .finish();        // Finishes constructing the configuration
 //!
@@ -33,7 +34,7 @@
 //! overview:
 //!
 //! ```
-//! use poem_proxy::ProxyConfig;
+//! use atm0s_cloud_http_common::dev_proxy::ProxyConfig;
 //!     
 //! // Configure proxy endpoint, pass in the target server address and port number
 //! let proxy_config = ProxyConfig::new( "localhost:5173" ) // 5173 is for Sveltekit
@@ -41,10 +42,6 @@
 //!     // One of the following lines is required to proxy web requests (post, get, etc)
 //!     .web_insecure() // http from proxy to server
 //!     .web_secure()   // https from proxy to server
-//!
-//!     // One of the following lines is required to proxy websockets
-//!     .ws_insecure()  // ws from proxy to server
-//!     .ws_secure()    // wss from proxy to server
 //!
 //!     // The following option is required to support nesting
 //!     .enable_nesting()
