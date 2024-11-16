@@ -47,6 +47,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install deps
+        if: matrix.build == 'linux gnu x64'
         run: |
           sudo apt-get update
           sudo apt install -y libssl-dev
