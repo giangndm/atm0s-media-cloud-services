@@ -2,7 +2,7 @@ use std::process::Command;
 
 fn main() {
     // Build Vite project when compiling in release mode
-    if !cfg!(debug_assertions) {
+    if !cfg!(debug_assertions) && std::env::var("SKIP_FRONTEND_BUILD").is_err() {
         Command::new("pnpm")
             .current_dir("./view/")
             .args(&["install"])

@@ -13,6 +13,7 @@ env:
   ARTIFACT_DIR: release-builds
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  SKIP_FRONTEND_BUILD: true
 
 jobs:
   build-release:
@@ -45,6 +46,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install deps
+        run: |
+          sudo apt-get update
+          sudo apt install -y libssl-dev
+
       - uses: actions/setup-node@v3
         with:
           node-version: 22
@@ -52,6 +58,9 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
+
+      - name: Build admin-panel frontend
+        run: cd bin/admin-panel/view && pnpm install && pnpm build
 
       - name: Build admin-panel binary
         uses: houseabsolute/actions-rust-cross@v0
