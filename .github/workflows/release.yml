@@ -47,14 +47,11 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
           registry-url: 'https://registry.npmjs.org'
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-
-      - name: Build admin-panel frontend
-        run: cd bin/admin-panel/view
 
       - name: Build admin-panel binary
         uses: houseabsolute/actions-rust-cross@v0

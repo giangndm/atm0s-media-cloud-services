@@ -3,7 +3,7 @@
 pre-build = [
     "dpkg --add-architecture $CROSS_DEB_ARCH",
     "apt-get update && apt-get --assume-yes install libssl-dev:$CROSS_DEB_ARCH curl",
-    "curl -fsSL https://deb.nodesource.com/setup_18.x | bash -",
+    "curl -fsSL https://deb.nodesource.com/setup_22.x | bash -",
     "apt-get install -y nodejs",
     "npm install -g pnpm@8"
 ]
