@@ -16,6 +16,7 @@ RUN case $TARGETPLATFORM in \
 
 FROM ubuntu:22.04
 
+RUN apt update && apt install -y libssl-dev && apt clean && rm -rf /var/lib/apt/lists/*
 COPY --from=base /atm0s-cloud-admin-panel /atm0s-cloud-admin-panel
 
 ENTRYPOINT ["/atm0s-cloud-admin-panel"]
